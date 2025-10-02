@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليلك القضائي - التواصل معنا</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">دليلك القضائي </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="vision.html">الرؤية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html" class="active">التواصل معنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <section class="hero-section">
+            <h1>تواصل معنا</h1>
+            <p>نحن هنا للإجابة على استفساراتك وتلقي ملاحظاتكم</p>
+        </section>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>معلومات التواصل</h2>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h3>العنوان</h3>
+                        <p>شارع المحاكم، ميدان العدالة، القاهرة، مصر</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h3>الهاتف</h3>
+                        <p>+20 2 12345678</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>info@legalplatform.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div>
+                        <h3>ساعات العمل</h3>
+                        <p>الأحد - الخميس: 9 ص - 5 م</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>أرسل رسالة</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">الموضوع</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer">
+        <p>© 2025 منصة دليلك القضائي. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('شكراً لتواصلكم معنا! سنرد على رسالتكم في أقرب وقت ممكن.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
