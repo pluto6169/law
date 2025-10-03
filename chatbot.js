@@ -1,4 +1,3 @@
-// وظائف خاصة بصفحة الشات بوت
 function initChatbot() {
     // إضافة رسالة إلى الشات
     function addMessage(text, sender, time = null) {
@@ -19,45 +18,36 @@ function initChatbot() {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
-    // محاكاة رد المساعد القانوني
-    function getBotResponse(userInput) {
-        userInput = userInput.toLowerCase();
+    // إرسال السؤال إلى النموذج الخارجي
+    async function fetchExternalResponse(userInput) {
+        try {
+            const response = await fetch("https://openrouter.ai/api/v1", {
+                method: "POST",
+                headers: {
+                    "Authorization": "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", // ← ضع مفتاحك هنا
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    model: "x-ai/grok-4-fast:free",
+                    messages: [
+                        { role: "system", content: "أنت مساعد قانوني مصري. أجب بصيغة قانونية واضحة." },
+                        { role: "user", content: userInput }
+                    ]
+                })
+            });
 
-        if (userInput.includes('طلاق') || userInput.includes('زوج') || userInput.includes('زوجة')) {
-            return {
-                text: 'بناءً على وصفك، يبدو أنك تواجه مشكلة في مجال الأحوال الشخصية. أنصحك بالرجوع إلى قانون الأحوال الشخصية المصري. بالنسبة لإجراءات الطلاق، يجب تقديم دعوى في محكمة الأسرة المختصة، مع إرفاق عقد الزواج وبطاقات الرقم القومي. هل تريد أن أقترح لك صياغة لدعوى الطلاق؟',
-                suggestLawsuit: true,
-                lawsuitType: 'طلاق'
-            };
-        } else if (userInput.includes('عقد') || userInput.includes('اتفاق') || userInput.includes('تعاقد')) {
-            return {
-                text: 'بناءً على وصفك، يبدو أن النزاع متعلق بالعقود. أنصحك بمراجعة البنود التعاقدية والرجوع إلى قانون المعاملات المدنية. يمكنك تقديم دعوى لتنفيذ العقد أو فسخه حسب الظروف. هل تود الحصول على مزيد من التفاصيل حول الإجراءات القانونية؟',
-                suggestLawsuit: false
-            };
-        } else if (userInput.includes('عامل') || userInput.includes('عمل') || userInput.includes('فصل')) {
-            return {
-                text: 'بناءً على وصفك، يبدو أن المشكلة متعلقة بقانون العمل. أنصحك بالرجوع إلى قانون العمل المصري. في حالة الفصل التعسفي، يحق للعامل المطالبة بتعويض. هل تريد أن أقترح لك صياغة لدعوى فصل تعسفي؟',
-                suggestLawsuit: true,
-                lawsuitType: 'فصل تعسفي'
-            };
-        } else if (userInput.includes('ضرر') || userInput.includes('تعويض')) {
-            return {
-                text: 'بناءً على وصفك، يبدو أنك تريد المطالبة بتعويض عن ضرر. أنصحك بالرجوع إلى قواعد المسؤولية التقصيرية في القانون المدني. يجب إثبات الخطأ والضرر وعلاقة السببية بينهما. هل تريد أن أقترح لك صياغة لدعوى تعويض؟',
-                suggestLawsuit: true,
-                lawsuitType: 'تعويض'
-            };
-        } else {
-            return {
-                text: 'شكراً لتواصلك. أنا مساعد قانوني يمكنني تقديم استشارات في مختلف المجالات القانونية. يرجى توضيح طبيعة مشكلتك بشكل أكثر تفصيلاً للحصول على مساعدة دقيقة.',
-                suggestLawsuit: false
-            };
+            const data = await response.json();
+            return data.choices?.[0]?.message?.content || "لم يتم العثور على رد.";
+        } catch (error) {
+            console.error("خطأ في الاتصال بـ API:", error);
+            return "حدث خطأ أثناء الاتصال بالمساعد القانوني الخارجي.";
         }
     }
 
     // إرسال رسالة من المستخدم
     const sendMessageBtn = document.getElementById('sendMessage');
     if (sendMessageBtn) {
-        sendMessageBtn.addEventListener('click', function () {
+        sendMessageBtn.addEventListener('click', async function () {
             const userInput = document.getElementById('userInput');
             if (!userInput) return;
 
@@ -67,17 +57,10 @@ function initChatbot() {
             addMessage(message, 'user');
             userInput.value = '';
 
-            // محاكاة الانتظار قبل الرد
-            setTimeout(() => {
-                const response = getBotResponse(message);
-                addMessage(response.text, 'bot');
+            addMessage("جارٍ المعالجة...", 'bot');
 
-                if (response.suggestLawsuit) {
-                    setTimeout(() => {
-                        addMessage('هل تريد أن أقترح لك صياغة لصحيفة دعوى ' + response.lawsuitType + '؟', 'bot');
-                    }, 1000);
-                }
-            }, 1000);
+            const botReply = await fetchExternalResponse(message);
+            addMessage(botReply, 'bot');
         });
     }
 
@@ -107,7 +90,7 @@ function initChatbot() {
     const downloadLawsuitBtn = document.getElementById('downloadLawsuit');
     if (downloadLawsuitBtn) {
         downloadLawsuitBtn.addEventListener('click', function () {
-            alert('سيتم تحميل ملف Word بصحيفة الدعوى. هذه ميزة ستكون متاحة في النسخة الكاملة من التطبيق.');
+            alert('سيتم تحميل ملف Word بصيغة صحيفة الدعوى. هذه الميزة ستكون متاحة في النسخة الكاملة من التطبيق.');
         });
     }
 }
