@@ -24,7 +24,7 @@ function initChatbot() {
 const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                 method: "POST",
                 headers: {
-                    "Authorization": "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", // ← ضع مفتاحك هنا
+                    "Authorization": "Bearer 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", // ← ضع مفتاحك هنا
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
@@ -99,4 +99,5 @@ const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
 document.addEventListener('DOMContentLoaded', function () {
     initChatbot();
 });
+
 
