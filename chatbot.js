@@ -21,7 +21,7 @@ function initChatbot() {
     // إرسال السؤال إلى النموذج الخارجي
     async function fetchExternalResponse(userInput) {
         try {
-            const response = await fetch("https://openrouter.ai/api/v1", {
+const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                 method: "POST",
                 headers: {
                     "Authorization": "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", // ← ضع مفتاحك هنا
@@ -99,3 +99,4 @@ function initChatbot() {
 document.addEventListener('DOMContentLoaded', function () {
     initChatbot();
 });
+
