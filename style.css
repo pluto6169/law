@@ -1,0 +1,827 @@
+:root {
+    --primary-dark: #0a0a0a;
+    --secondary-dark: #1a1a2e;
+    --accent-color: #5d4037;
+    --dark-gray: #2d2d2d;
+    --medium-gray: #3d3d3d;
+    --light-text: #e0e0e0;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+    line-height: 1.6;
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+}
+
+/* شريط التنقل */
+.navbar {
+    background-color: var(--secondary-dark);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.2s;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.4s;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.6s;
+}
+
+.nav-links li {
+    margin-right: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.4s;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    margin-top: 80px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: calc(100vh - 160px);
+}
+
+/* عناصر تظهر بتأثير Fade-in */
+.hero-section,
+.features,
+.footer,
+.vision-content,
+.about-content,
+.contact-content,
+.notifications-section,
+.courts-section,
+.jurisdiction-form,
+.chatbot-section {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.7s;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(to right, var(--secondary-dark), var(--primary-dark));
+    color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    border: 1px solid var(--accent-color);
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* الأيقونات المصغرة */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+    border: 1px solid var(--medium-gray);
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.8s;
+}
+
+.feature-card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent-color);
+    color: inherit;
+    text-decoration: none;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    background-color: var(--secondary-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2rem;
+    border: 2px solid var(--accent-color);
+}
+
+.feature-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.feature-card p {
+    color: var(--light-text);
+}
+
+/* تذييل الصفحة */
+.footer {
+    background-color: var(--secondary-dark);
+    color: var(--light-text);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--accent-color);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 0.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* تحسين عرض الموبايل أصغر من 480px */
+@media (max-width: 480px) {
+    .nav-links a {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+}
+
+/* أنماط خاصة بصفحة الرؤية */
+.vision-content {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--medium-gray);
+    margin-bottom: 2rem;
+}
+
+.vision-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.vision-item:last-child {
+    border-bottom: none;
+}
+
+.vision-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.vision-item p {
+    line-height: 1.8;
+}
+
+/* أنماط خاصة بصفحة من نحن */
+.about-content {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--medium-gray);
+    margin-bottom: 2rem;
+}
+
+.team-section {
+    margin-top: 2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.team-member {
+    background-color: var(--medium-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--accent-color);
+}
+
+.member-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    background-color: var(--secondary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2.5rem;
+    border: 2px solid var(--accent-color);
+}
+
+.member-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.member-role {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+/* أنماط خاصة بصفحة التواصل */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info,
+.contact-form {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--medium-gray);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+    border: 1px solid var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #4a342e;
+    animation: pulse 1s infinite;
+}
+
+/* نبضة خفيفة عند Hover */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* أنماط خاصة بمركز الإعلامات */
+.notifications-section {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--medium-gray);
+    margin-bottom: 2rem;
+}
+
+.notification-card {
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    background-color: var(--primary-dark);
+}
+
+.notification-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent-color);
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 0.5rem;
+}
+
+.notification-title {
+    font-weight: bold;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.notification-date {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.notification-body p {
+    line-height: 1.8;
+    color: var(--light-text);
+}
+
+.notification-badge {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+}
+
+.filter-buttons {
+    display: flex;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    background-color: var(--medium-gray);
+    color: var(--light-text);
+    border: 1px solid var(--medium-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-color: var(--accent-color);
+}
+
+/* أنماط خاصة بصفحة المحاكم */
+.courts-section {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--medium-gray);
+    margin-bottom: 2rem;
+}
+
+.court-item {
+    margin-bottom: 1rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--primary-dark);
+}
+
+.court-header {
+    background-color: var(--secondary-dark);
+    color: var(--white);
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.court-header:hover {
+    background-color: #25253a;
+}
+
+.court-content {
+    padding: 1.5rem;
+    display: none;
+    background-color: var(--dark-gray);
+}
+
+.court-content.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.court-image-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--secondary-dark);
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2rem;
+    border: 2px solid var(--accent-color);
+}
+
+.court-info {
+    margin-bottom: 1rem;
+}
+
+.court-info strong {
+    color: var(--accent-color);
+}
+
+.search-box {
+    margin-bottom: 1.5rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Keyframes للfadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* أنماط خاصة بصفحة تحديد الاختصاص */
+.jurisdiction-form {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--medium-gray);
+    margin-bottom: 2rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-label input {
+    margin-left: 0.5rem;
+}
+
+.result-section {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--medium-gray);
+    margin-top: 2rem;
+    display: none;
+}
+
+.result-title {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.result-details {
+    background-color: var(--primary-dark);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--medium-gray);
+}
+
+.result-item {
+    margin-bottom: 0.75rem;
+    display: flex;
+}
+
+.result-label {
+    font-weight: bold;
+    color: var(--accent-color);
+    min-width: 150px;
+}
+
+.conditional-field {
+    display: none;
+}
+
+/* أنماط خاصة بصفحة الشات بوت */
+.chatbot-section {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--medium-gray);
+    margin-bottom: 2rem;
+}
+
+.chat-container {
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    height: 400px;
+    overflow-y: auto;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    max-width: 80%;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+.user-message {
+    background-color: var(--secondary-dark);
+    color: var(--white);
+    margin-left: auto;
+    border-bottom-right-radius: 2px;
+}
+
+.bot-message {
+    background-color: var(--medium-gray);
+    color: var(--light-text);
+    border-bottom-left-radius: 2px;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-top: 0.25rem;
+    text-align: left;
+}
+
+.chat-input {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+}
+
+.chat-input input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.chat-input button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #4a342e;
+}
+
+.suggested-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.suggested-question {
+    background-color: var(--medium-gray);
+    color: var(--light-text);
+    border: 1px solid var(--medium-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.suggested-question:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-color: var(--accent-color);
+}
+
+.lawsuit-section {
+    background-color: var(--dark-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--medium-gray);
+    margin-top: 2rem;
+    display: none;
+}
+
+.lawsuit-preview {
+    background-color: var(--primary-dark);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--medium-gray);
+    margin-top: 1rem;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+}
+
+.download-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #4a342e;
+}
+
+/* Keyframes للfadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframes للنبضة */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}

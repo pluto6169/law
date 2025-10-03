@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة المحاماة القانونية - عناوين المحاكم</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">منصة المحاماة القانونية</div>
+            <ul class="nav-links">
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="vision.html">الرؤية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">التواصل معنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <section class="hero-section">
+            <h1>عناوين المحاكم</h1>
+            <p>دليل شامل لعناوين واختصاصات المحاكم في القاهرة والجيزة</p>
+        </section>
+
+        <div class="search-box">
+            <input type="text" id="courtSearch" placeholder="ابحث عن محكمة...">
+        </div>
+
+        <div class="courts-filter">
+            <button class="filter-btn active" data-filter="all">جميع المحاكم</button>
+            <button class="filter-btn" data-filter="cairo">محاكم القاهرة</button>
+            <button class="filter-btn" data-filter="giza">محاكم الجيزة</button>
+            <button class="filter-btn" data-filter="civil">المحاكم المدنية</button>
+            <button class="filter-btn" data-filter="criminal">المحاكم الجنائية</button>
+            <button class="filter-btn" data-filter="specialized">المحاكم المتخصصة</button>
+        </div>
+
+        <div class="courts-section">
+            <!-- محاكم القاهرة -->
+            <div class="court-category" data-category="cairo">
+                <h2 class="category-title">محاكم محافظة القاهرة</h2>
+
+                <!-- المحاكم المدنية بالقاهرة -->
+                <div class="court-type" data-type="civil">
+                    <h3>المحاكم المدنية</h3>
+
+                    <div class="court-item" data-court="partial">
+                        <div class="court-header">
+                            <span>محاكم الجزئية (منازعات صغيرة)</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">⚖️</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> الفصل في المنازعات المدنية ذات القيمة المنخفضة</p>
+                                <p><strong>الاختصاص القيمي:</strong> القضايا التي لا تتجاوز قيمتها 20,000 جنيه مصري</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة القاهرة مقسمة إلى أربع دوائر رئيسية</p>
+                                <ul>
+                                    <li>دائرة شرق: (شبرا - وسط البلد - مصر الجديدة)</li>
+                                    <li>دائرة غرب: (مصر القديمة - بولاق - القلعة)</li>
+                                    <li>دائرة شمال: (الزمالك - الإمام الحسين - الجمالية)</li>
+                                    <li>دائرة جنوب: (المعادي - عين شمس - التجمع الخامس)</li>
+                                </ul>
+                                <p><strong>عدد الدوائر:</strong> 4 دوائر، كل دائرة تضم 5 محاكم جزئية</p>
+                                <p><strong>العنوان:</strong> المجمع القضائي بنهر النيل - قصر النيل - محافظة القاهرة</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="primary">
+                        <div class="court-header">
+                            <span>محكمة القاهرة الابتدائية</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">🏛️</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> الفصل في المنازعات المدنية والتجارية المتوسطة</p>
+                                <p><strong>الاختصاص القيمي:</strong> القضايا التي تزيد قيمتها عن 20,000 جنيه حتى 200,000
+                                    جنيه</p>
+                                <p><strong>الاختصاص المكاني:</strong> تشمل جميع أحياء محافظة القاهرة</p>
+                                <p><strong>عدد الدوائر:</strong> 50 دائرة</p>
+                                <p><strong>العنوان:</strong> المجمع القضائي بنهر النيل - قصر النيل - محافظة القاهرة</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="appeal">
+                        <div class="court-header">
+                            <span>محكمة استئناف القاهرة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">🔍</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> نظر الطعون المدنية والتجارية على أحكام الابتدائية
+                                </p>
+                                <p><strong>الاختصاص القيمي:</strong> استئناف الأحكام التي تجاوزت قيمتها 200,000 جنيه</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة القاهرة</p>
+                                <p><strong>عدد الدوائر:</strong> 17 دائرة استئناف</p>
+                                <p><strong>العنوان:</strong> مبنى محكمة استئناف القاهرة - كورنيش النيل بجوار كوبري قصر
+                                    النيل</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="family">
+                        <div class="court-header">
+                            <span>محاكم الأسرة والأحداث</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">👨‍👩‍👧‍👦</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> منازعات الأحوال الشخصية (نفقة، حضانة، طلاق) وقضايا
+                                    الأحداث الجنائية والمدنية</p>
+                                <p><strong>الاختصاص القيمي:</strong> غير مرتبط بقيمة مالية</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة القاهرة</p>
+                                <p><strong>عدد الدوائر:</strong> دائرتان للأسرة (نفقة وحضانة) ودائرتان لقضايا الأحداث
+                                </p>
+                                <p><strong>العنوان:</strong> المبنى رقم 4 بالمجمع القضائي بنهر النيل - قصر النيل -
+                                    محافظة القاهرة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المحاكم الجنائية بالقاهرة -->
+                <div class="court-type" data-type="criminal">
+                    <h3>المحاكم الجنائية</h3>
+
+                    <div class="court-item" data-court="felonies">
+                        <div class="court-header">
+                            <span>محاكم جنايات القاهرة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">⚔️</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> الجرائم الجنائية الكبرى (جنايات)</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة القاهرة كاملة</p>
+                                <p><strong>عدد الدوائر:</strong> 17 دائرة جنايات</p>
+                                <p><strong>العنوان:</strong> المجمع القضائي بنهر النيل - قصر النيل - محافظة القاهرة</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="misdemeanors">
+                        <div class="court-header">
+                            <span>محاكم جنح القاهرة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">📋</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> الجرائم الجنحية (عقوبات حبس قصيرة وغرامات حتى
+                                    10,000 جنيه)</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة القاهرة كاملة</p>
+                                <p><strong>عدد الدوائر:</strong> 198 دائرة جنح</p>
+                                <p><strong>العنوان:</strong> المبنى الرئيسي للمحاكم الجزئية والجنائية - قصر النيل -
+                                    محافظة القاهرة</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="criminal-appeal">
+                        <div class="court-header">
+                            <span>محكمة جنايات استئناف القاهرة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">🔎</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> نظر طعون الجنح والجنايات</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة القاهرة</p>
+                                <p><strong>عدد الدوائر:</strong> دائرتان</p>
+                                <p><strong>العنوان:</strong> مبنى محكمة جنايات الاستئناف - كورنيش النيل بجوار كوبري قصر
+                                    النيل</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المحاكم المتخصصة بالقاهرة -->
+                <div class="court-type" data-type="specialized">
+                    <h3>المحاكم المتخصصة</h3>
+
+                    <div class="court-item" data-court="commercial">
+                        <div class="court-header">
+                            <span>المحكمة التجارية بالقاهرة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">💰</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> منازعات الشركات والتجارة</p>
+                                <p><strong>الاختصاص القيمي:</strong> أكثر من 200,000 جنيه</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة القاهرة</p>
+                                <p><strong>عدد الدوائر:</strong> دائرتان</p>
+                                <p><strong>العنوان:</strong> المجمع القضائي بنهر النيل - قصر النيل - القاهرة</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="labor">
+                        <div class="court-header">
+                            <span>المحاكم العمالية بالقاهرة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">👷</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> منازعات العمل وقضايا التأمينات</p>
+                                <p><strong>الاختصاص القيمي:</strong> غير مرتبط بقيمة مالية</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة القاهرة</p>
+                                <p><strong>عدد الدوائر:</strong> 4 دوائر</p>
+                                <p><strong>العنوان:</strong> مجمع المحاكم العمالية - طريق أبو رواش - مدينة نصر</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="administrative">
+                        <div class="court-header">
+                            <span>محكمة القضاء الإداري</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">🏢</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> الطعون على القرارات الإدارية</p>
+                                <p><strong>الاختصاص القيمي:</strong> غير مرتبط بقيمة مالية</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة القاهرة</p>
+                                <p><strong>عدد الدوائر:</strong> 5 دوائر</p>
+                                <p><strong>العنوان:</strong> مبنى القضاء الإداري - شارع الشريف - دائرة وسط البلد</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محاكم الجيزة -->
+            <div class="court-category" data-category="giza">
+                <h2 class="category-title">محاكم محافظة الجيزة</h2>
+
+                <!-- المحاكم المدنية بالجيزة -->
+                <div class="court-type" data-type="civil">
+                    <h3>المحاكم المدنية</h3>
+
+                    <div class="court-item" data-court="partial">
+                        <div class="court-header">
+                            <span>محاكم الجزئية بمحافظة الجيزة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">⚖️</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> الفصل في منازعات مدنية ذات قيمة ≤ 20,000 جنيه</p>
+                                <p><strong>الاختصاص المكاني:</strong> دائرة شمال الجيزة (أبو النمرس-الصف-أمبابة) ودائرة
+                                    جنوب الجيزة (الوراق-الهرم-الجيزة)</p>
+                                <p><strong>عدد الدوائر:</strong> 2 دوائر رئيسية، كل دائرة تضم 6 محاكم جزئية</p>
+                                <p><strong>العنوان:</strong> مجمع محاكم الجيزة - طريق الواحات (الطريق السادس من أكتوبر)
+                                    أمام الكوبري العلوي</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="primary">
+                        <div class="court-header">
+                            <span>محكمة الجيزة الابتدائية</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">🏛️</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> منازعات مدنية وتجارية بقيمة 20,000-200,000 جنيه</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة الجيزة</p>
+                                <p><strong>عدد الدوائر:</strong> 25 دائرة</p>
+                                <p><strong>العنوان:</strong> مبنى محكمة الجيزة الابتدائية - شارع الهرم - الجيزة</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="appeal">
+                        <div class="court-header">
+                            <span>محكمة استئناف الجيزة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">🔍</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> نظر الطعون المدنية والتجارية على أحكام الابتدائية
+                                </p>
+                                <p><strong>الاختصاص القيمي:</strong> أكثر من 200,000 جنيه</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة الجيزة</p>
+                                <p><strong>عدد الدوائر:</strong> 17 دائرة</p>
+                                <p><strong>العنوان:</strong> برج رقم 2 - مجمع محاكم الجيزة - شارع الهرم خلف مبنى
+                                    الابتدائية</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="family">
+                        <div class="court-header">
+                            <span>محاكم الأسرة والأحداث بالجيزة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">👨‍👩‍👧‍👦</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> منازعات الأحوال الشخصية وقضايا الأحداث</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة الجيزة</p>
+                                <p><strong>عدد الدوائر:</strong> دائرتان للأسرة ودائرتان للأحداث</p>
+                                <p><strong>العنوان:</strong> المبنى رقم 4 بالمجمع القضائي - شارع مجلس مدينة 6 أكتوبر -
+                                    الجيزة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المحاكم الجنائية بالجيزة -->
+                <div class="court-type" data-type="criminal">
+                    <h3>المحاكم الجنائية</h3>
+
+                    <div class="court-item" data-court="felonies">
+                        <div class="court-header">
+                            <span>محاكم جنايات الجيزة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">⚔️</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> الجرائم الجنائية الكبرى</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة الجيزة</p>
+                                <p><strong>عدد الدوائر:</strong> 15 دائرة جنايات</p>
+                                <p><strong>العنوان:</strong> مجمع المحاكم الجنائية - شارع الهرم - الجيزة</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="misdemeanors">
+                        <div class="court-header">
+                            <span>محاكم جنح الجيزة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">📋</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> الجرائم الجنحية وغرامات حتى 10,000 جنيه</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة الجيزة</p>
+                                <p><strong>عدد الدوائر:</strong> 178 دائرة جنح</p>
+                                <p><strong>العنوان:</strong> مبنى محكمة جنح الجيزة - شارع فيصل - منطقة إمبابة - الجيزة
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="criminal-appeal">
+                        <div class="court-header">
+                            <span>محكمة جنايات استئناف الجيزة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">🔎</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> نظر طعون الجنح والجنايات</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة الجيزة</p>
+                                <p><strong>عدد الدوائر:</strong> دائرة واحدة</p>
+                                <p><strong>العنوان:</strong> برج محكمة الاستئناف - شارع الهرم - الجيزة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المحاكم المتخصصة بالجيزة -->
+                <div class="court-type" data-type="specialized">
+                    <h3>المحاكم المتخصصة</h3>
+
+                    <div class="court-item" data-court="commercial">
+                        <div class="court-header">
+                            <span>المحاكم التجارية بالجيزة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">💰</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> منازعات تجارية بقيمة أكثر من 200,000 جنيه</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة الجيزة</p>
+                                <p><strong>عدد الدوائر:</strong> دائرة واحدة</p>
+                                <p><strong>العنوان:</strong> مبنى المحاكم التجارية - طريق الواحات - 6 أكتوبر</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-item" data-court="labor">
+                        <div class="court-header">
+                            <span>المحاكم العمالية بالجيزة</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="court-content">
+                            <div class="court-image-placeholder">👷</div>
+                            <div class="court-info">
+                                <p><strong>الاختصاص النوعي:</strong> منازعات العمل والتأمينات الاجتماعية</p>
+                                <p><strong>الاختصاص القيمي:</strong> غير مرتبط بقيمة مالية</p>
+                                <p><strong>الاختصاص المكاني:</strong> محافظة الجيزة</p>
+                                <p><strong>عدد الدوائر:</strong> دائرتان</p>
+                                <p><strong>العنوان:</strong> مقر المحاكم العمالية - شارع مجلس الدولة - برج الطبّاع - 6
+                                    أكتوبر</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer">
+        <p>© 2025 منصة المحاماة القانونية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="courts.js"></script>
+</body>
+
+</html>
